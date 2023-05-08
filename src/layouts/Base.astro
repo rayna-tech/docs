@@ -1,0 +1,108 @@
+---
+let currentUrl = Astro.url.pathname;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>~/docs{currentUrl}</title>
+    <style is:global>
+
+      .bounce {
+        transition: 200ms ease;
+      }
+      /* * {
+        font-family: "JetBrains Mono", monospace;
+      } */
+      h1:not(.header, .astro-code),
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-bottom: -1.1rem !important;
+        font-size: 18px;
+        opacity: 0.7;
+      }
+
+      p {
+        opacity: .8;
+        @apply text-sm;
+      }
+
+      p::before {
+        content: '"';
+      }
+
+      p::after {
+        content: '."';
+      }
+
+      code:not(.astro-code code) {
+        @apply bg-black border border-white border-opacity-25 px-1 py-[0.15rem] rounded-md
+      }
+
+      .astro-code {
+        padding: 1rem;
+        background-color: black !important;
+        @apply rounded-lg border border-white border-opacity-10;
+        font-family: 'JetBrains Mono', monospace !important;
+        overflow-x: scroll
+      }
+
+      .astro-code code { 
+        @apply bg-black
+      }
+      .astro-code code span {
+        @apply bg-black;
+         font-family: 'JetBrains Mono', monospace !important;
+      }
+
+      *:not(.astro-code)::-webkit-scrollbar {
+        display: none;
+      }
+
+      .astro-code::-webkit-scrollbar {
+        @apply bg-transparent h-[3px]
+      }
+
+      .astro-code::-webkit-scrollbar-thumb {
+        @apply bg-white bg-opacity-10 rounded-md
+      }
+
+      .astro-code::-webkit-scrollbar-corner {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-black text-white font-mono code mx-auto flex max-w-xl flex-col gap-6 px-6 pb-40 mt-[10rem]"
+  >
+    <!-- <h1
+      class="text-[0.65rem] header cursor-pointer w-fit whitespace-pre"
+      onclick="window.location.href='/'"
+    >
+                                                                                 
+`7MM"""Mq.                                             `7MM"""Yb.                              
+  MM   `MM.                                              MM    `Yb.                            
+  MM   ,M9   ,6"Yb.`7M'   `MF'`7MMpMMMb.   ,6"Yb.        MM     `Mb  ,pW"Wq.   ,p6"bo  ,pP"Ybd 
+  MMmmdM9   8)   MM  VA   ,V    MM    MM  8)   MM        MM      MM 6W'   `Wb 6M'  OO  8I   `" 
+  MM  YM.    ,pm9MM   VA ,V     MM    MM   ,pm9MM        MM     ,MP 8M     M8 8M       `YMMMa. 
+  MM   `Mb. 8M   MM    VVV      MM    MM  8M   MM        MM    ,dP' YA.   ,A9 YM.    , L.   I8 
+.JMML. .JMM.`Moo9^Yo.  ,V     .JMML  JMML.`Moo9^Yo.    .JMMmmmdP'    `Ybmd9'   YMbmd'  M9mmmP' 
+                      ,V                                                                       
+                   OOb"    
+    </h1> -->
+    <slot />
+  </body>
+</html>

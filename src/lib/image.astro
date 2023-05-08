@@ -1,0 +1,8 @@
+---
+  const { url, className, alt } = Astro.props
+---
+
+<div>
+ <img draggable="false" src={url} class={`${className} w-[inherit] h-[378px] mb-2`} alt={ alt || `${url} source`}>
+ <a class="opacity-30 cursor-pointer text-sm" href={url} target="_blank">{url}</a>
+</div>

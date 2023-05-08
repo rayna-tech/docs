@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+let docs = await Astro.glob("./**/**.mdx")
+//@ts-ignore
+docs = docs.filter(f => !f.frontmatter.private).map((z) => z.url)
+---
+
+<Base>
+	{docs.map((doc) => (
+		//@ts-ignore
+		 <a class="opacity-70 cursor-pointer w-fit" href={doc}>~/docs{doc}</a>
+	))}
+</Base>
